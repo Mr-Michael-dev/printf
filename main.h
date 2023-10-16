@@ -12,4 +12,6 @@ int handle_str(char *arg);
 
 int handle_int(int arg);
 
+int handle_unint(unsigned int arg);
+
 #endif
