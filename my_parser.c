@@ -19,7 +19,7 @@ int my_parser(const char *format, va_list args)
 
 	for (p = format; *format; p++)
 	{
-		if (*p == NULL)
+		if (p == NULL)
 			return (-1);
 		if (*p != '%')
 		{
@@ -27,33 +27,39 @@ int my_parser(const char *format, va_list args)
 			len_count++;
 		}
 		else
+		{
 			p++;
-		if (*p == '\0')
-			break;
-		if (*p == '%')
-		{
-			_putchar('%');
-			len_count++;
-		}
-		else if (*p == 'c')
-		{
-			c = va_arg(args, char);
+			if (*p == '\0')
+				break;
+			if (*p == '%')
+			{
+				_putchar('%');
+				len_count++;
+			}
+			else if (*p == 'c')
+			{
+				c = va_arg(args, int);
 
-			handle_char(c);
-			len_count++;
-		}
-		else if (*p == 's')
-		{
-			str = va_arg(args, char *);
-			handle_string(str);
-			len_count++;
-		}
-		else if (*p == 'd')
-		{
-			integer = va_arg(args, int);
+				handle_char(c);
+				len_count++;
+			}
+			else if (*p == 's')
+			{
+				str = va_arg(args, char *);
+				handle_str(str);
+				len_count++;
+			}
+			else if (*p == 'd')
+			{
+				integer = va_arg(args, int);
 
-			handle_int(integer);
-			len_count++;
+				handle_int(integer);
+				len_count++;
+			}
+			else
+			{
+				return (-1);
+			}
 		}
 	}
 	return (len_count);
