@@ -9,7 +9,7 @@
 
 int handle_str(char *arg)
 {
-	while (arg*)
+	while (*arg)
 	{
 		_putchar(*arg);
 		arg++;

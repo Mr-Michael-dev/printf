@@ -7,7 +7,7 @@
  * Return: 0
  */
 
-int handle_int(unsigned int arg)
+int handle_uint(unsigned int arg)
 {
 	char temp[24];
 	int i = 0;
