@@ -16,6 +16,8 @@ int my_parser(const char *format, va_list args)
 	char c;
 	char *str;
 	int integer;
+	int i_specifier;
+	int unint_specifier;
 
 	for (p = format; *p; p++)
 	{
@@ -56,10 +58,17 @@ int my_parser(const char *format, va_list args)
 			}
 			else if (*p == 'i')
 			{
-				integer = va_arg(args, int);
+				i_specifier  = va_arg(args, int);
 
-				len_count += handle_int(integer);
+				len_count += handle_int(i_specifier);
 			}
+			else if (*p == 'u')
+			{
+				unint_specifier  = va_arg(args, unsigned int);
+
+				len_count += handle_uint(unint_specifier);
+			}
+
 			else
 			{
 				return (-1);

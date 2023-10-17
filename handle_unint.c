@@ -11,10 +11,12 @@ int handle_uint(unsigned int arg)
 {
 	char temp[24];
 	int i = 0;
+	int add_count = 0;
 
 	if (arg == 0)
 	{
 		_putchar('0');
+		add_count += 1;
 	} else
 	{
 		while (arg > 0)
@@ -26,8 +28,9 @@ int handle_uint(unsigned int arg)
 		while (i > 0)
 		{
 			_putchar(temp[--i]);
+			add_count += 1;
 		}
 	}
 
-	return (0);
+	return (add_count);
 }
