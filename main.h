@@ -2,6 +2,7 @@
 #define MAIN_H
 #include <stdio.h>
 #include <stdarg.h>
+#define BUFF_SIZE 1024
 
 int _printf(const char *format, ...);
 

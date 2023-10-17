@@ -17,10 +17,10 @@ int my_parser(const char *format, va_list args)
 	char *str;
 	int integer;
 
-	for (p = format; *format; p++)
+	for (p = format; *p; p++)
 	{
-		if (p == NULL)
-			return (-1);
+		/*if (*p == NULL)
+			return (-1);*/
 		if (*p != '%')
 		{
 			_putchar(*p);

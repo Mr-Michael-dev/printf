@@ -1,5 +1,5 @@
- #include "main.h"
- 
+#include "main.h"
+
 /**
  * _printf - print formatted string to the screen.
  * @format: character string to print.
@@ -8,6 +8,8 @@
  */
 int _printf(const char *format, ...)
 {
+	/*int buffindex = 0;
+	char buffer[BUFF_SIZE);*/
 	va_list args;
 	va_start(args, format);
 	my_parser(format, args);
