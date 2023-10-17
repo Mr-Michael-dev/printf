@@ -40,10 +40,6 @@ int my_parser(const char *format, va_list args)
 			else if (*p == 'c')
 			{
 				c = va_arg(args, int);
-				if (c == NULL)
-				{
-					return (-1);
-				}
 				handle_char(c);
 				len_count++;
 			}
@@ -66,58 +62,33 @@ int my_parser(const char *format, va_list args)
 			else if (*p == 'd')
 			{
 				integer = va_arg(args, int);
-				if (integer == NULL)
-				{
-					return (-1);
-				}
 				len_count += handle_int(integer);
 			}
 			else if (*p == 'i')
 			{
 				i_specifier  = va_arg(args, int);
-				if (i_specifier == NULL)
-				{
-					return (-1);
-				}
 				len_count += handle_int(i_specifier);
 			}
 			else if (*p == 'u')
 			{
 				unint_specifier  = va_arg(args, unsigned int);
-				if (integer == NULL)
-				{
-					return (-1);
-				}
 				len_count += handle_unint(unint_specifier);
 			}
 			else if (*p == 'x')
 			{
 				decml_specifier  = va_arg(args, unsigned int);
-				if (integer == NULL)
-				{
-					return (-1);
-				}
 				len_count += handle_decimal(decml_specifier);
 			}
 			else if (*p == 'X')
 			{
 				X_specifier  = va_arg(args, unsigned int);
-				if (integer == NULL)
-				{
-					return (-1);
-				}
 				len_count += handle_decml_uppercase(X_specifier);
 			}
 			else if (*p == 'b')
 			{
 				binary_specifier  = va_arg(args, unsigned int);
-				if (integer == NULL)
-				{
-					return (-1);
-				}
 				len_count += handle_binary(binary_specifier);
 			}
-
 			else
 			{
 				return (-1);
