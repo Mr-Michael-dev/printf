@@ -38,31 +38,54 @@ int my_parser(const char *format, va_list args)
 			else if (*p == 'c')
 			{
 				c = va_arg(args, int);
-
+				if(c == NULL)
+				{
+					return (-1);
+				}
 				handle_char(c);
 				len_count++;
 			}
 			else if (*p == 's')
 			{
 				str = va_arg(args, char *);
-				len_count += handle_str(str);
+				if (str == NULL)
+				{
+					putchar('(');
+					putchar('n');
+					putchar('u');
+					putchar('l');
+					putchar(')');
+				}
+				else
+				{
+					len_count += handle_str(str);
+				}
 			}
 			else if (*p == 'd')
 			{
 				integer = va_arg(args, int);
-
+				if (integer == NULL)
+				{
+					return (-1);
+				}
 				len_count += handle_int(integer);
 			}
 			else if (*p == 'i')
 			{
 				i_specifier  = va_arg(args, int);
-
+				if (i_specifier == NULL)
+				{
+					return (-1);
+				}
 				len_count += handle_int(i_specifier);
 			}
 			else if (*p == 'u')
 			{
 				unint_specifier  = va_arg(args, unsigned int);
-
+				if (integer == NULL)
+				{
+					return (-1);
+				}
 				len_count += handle_unint(unint_specifier);
 			}
 
