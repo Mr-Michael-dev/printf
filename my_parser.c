@@ -17,7 +17,9 @@ int my_parser(const char *format, va_list args)
 	int integer;
 	int i_specifier;
 	int unint_specifier;
-
+	int decml_specifier;
+	int x_specifier;
+	int binary_specifier;
 	for (p = format; *p; p++)
 	{
 		if (*p != '%')
@@ -87,6 +89,33 @@ int my_parser(const char *format, va_list args)
 					return (-1);
 				}
 				len_count += handle_unint(unint_specifier);
+			}
+			else if (*p == 'x')
+			{
+				decml_specifier  = va_arg(args, unsigned int);
+				if (integer == NULL)
+				{
+					return (-1);
+				}
+				len_count += handle_decimal(decml_specifier);
+			}
+			else if (*p == 'X')
+			{
+				X_specifier  = va_arg(args, unsigned int);
+				if (integer == NULL)
+				{
+					return (-1);
+				}
+				len_count += handle_decml_uppercase(X_specifier);
+			}
+			else if (*p == 'b')
+			{
+				binary_specifier  = va_arg(args, unsigned int);
+				if (integer == NULL)
+				{
+					return (-1);
+				}
+				len_count += handle_binary(binary_specifier);
 			}
 
 			else
