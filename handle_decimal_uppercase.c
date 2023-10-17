@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * handle_hexadecimal - prints hexadecimal to stdout
+ * handle_hexadecimal_uppercase - prints hexadecimal to stdout
  * @arg: integer to be printed
  *
  * Return: 0

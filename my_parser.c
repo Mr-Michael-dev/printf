@@ -20,6 +20,7 @@ int my_parser(const char *format, va_list args)
 	int decml_specifier;
 	int X_specifier;
 	int binary_specifier;
+
 	for (p = format; *p; p++)
 	{
 		if (*p != '%')
@@ -46,18 +47,7 @@ int my_parser(const char *format, va_list args)
 			else if (*p == 's')
 			{
 				str = va_arg(args, char *);
-				if (str == NULL)
-				{
-					putchar('(');
-					putchar('n');
-					putchar('u');
-					putchar('l');
-					putchar(')');
-				}
-				else
-				{
-					len_count += handle_str(str);
-				}
+				len_count += handle_str(str);
 			}
 			else if (*p == 'd')
 			{
