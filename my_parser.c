@@ -20,7 +20,7 @@ int my_parser(const char *format, va_list args)
 	for (p = format; *p; p++)
 	{
 		/*if (*p == NULL)
-			return (-1);*/
+		  return (-1);*/
 		if (*p != '%')
 		{
 			_putchar(*p);
@@ -56,6 +56,13 @@ int my_parser(const char *format, va_list args)
 				handle_int(integer);
 				len_count++;
 			}
+			else if (*p == 'i')
+			{
+				integer = va_arg(args, int);
+
+				handle_int(integer);
+				len_count++;
+			}
 			else
 			{
 				return (-1);
@@ -63,4 +70,5 @@ int my_parser(const char *format, va_list args)
 		}
 	}
 	return (len_count);
+
 }
