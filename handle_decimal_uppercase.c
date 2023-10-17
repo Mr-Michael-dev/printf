@@ -7,7 +7,7 @@
  * Return: 0
  */
 
-int handle_hexadecimal(unsigned int arg)
+int handle_hexadecimal_uppercase(unsigned int arg)
 {
         char temp[24];
         int i = 0;

@@ -18,7 +18,7 @@ int my_parser(const char *format, va_list args)
 	int i_specifier;
 	int unint_specifier;
 	int decml_specifier;
-	int x_specifier;
+	int X_specifier;
 	int binary_specifier;
 	for (p = format; *p; p++)
 	{
@@ -106,7 +106,7 @@ int my_parser(const char *format, va_list args)
 				{
 					return (-1);
 				}
-				len_count += handle_decml_uppercase(X_specifier);
+				len_count += handle_hexadecimal_uppercas(X_specifier);
 			}
 			else if (*p == 'b')
 			{
