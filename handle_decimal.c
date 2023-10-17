@@ -12,7 +12,7 @@ int handle_hexadecimal(unsigned int arg)
 	char temp[24];
 	int i = 0;
 	int add_count = 0;
-	:
+
 
 		if (arg == 0)
 		{
@@ -25,7 +25,7 @@ int handle_hexadecimal(unsigned int arg)
 				remainder = arg % 16;
 				if (arg < 10)
 					temp[i++] = 48 + remainder;
-				else 
+				else
 					temp[i++] = 55 + remainder;
 				arg /= 16;
 			}
