@@ -10,11 +10,6 @@ int handle_binary(unsigned int arg)
 {
 	int count = 0;
 
-	if (arg == NULL)
-	{
-		return (-1);
-	}
-
 	if (arg == 0)
 	{
 		_putchar('0');
