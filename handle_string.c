@@ -9,11 +9,14 @@
 
 int handle_str(char *arg)
 {
+	int stringcount = 0;
+
 	while (*arg)
 	{
 		_putchar(*arg);
+		stringcount += 1;
 		arg++;
 	}
 
-	return (0);
+	return (stringcount);
 }
