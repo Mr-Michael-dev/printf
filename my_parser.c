@@ -77,12 +77,12 @@ int my_parser(const char *format, va_list args)
 			else if (*p == 'x')
 			{
 				decml_specifier  = va_arg(args, unsigned int);
-				len_count += handle_decimal(decml_specifier);
+				len_count += handle_hexadecimal(decml_specifier);
 			}
 			else if (*p == 'X')
 			{
 				X_specifier  = va_arg(args, unsigned int);
-				len_count += handle_hexadecimal_uppercas(X_specifier);
+				len_count += handle_hexadecimal_uppercase(X_specifier);
 			}
 			else if (*p == 'b')
 			{
