@@ -11,17 +11,20 @@ int handle_int(int arg)
 {
 	char temp[24];
 	int i = 0;
-
+	int int_count = 0;
 	if (arg < 0)
 	{
 		_putchar('-');
+		int_count++;
 		arg = -arg;
 	}
 
 	if (arg == 0)
 	{
 		_putchar('0');
-	} else
+		int_count++;
+	} 
+	else
 	{
 		while (arg > 0)
 		{
@@ -32,8 +35,9 @@ int handle_int(int arg)
 		while (i > 0)
 		{
 			_putchar(temp[--i]);
+			int_count++;
 		}
 	}
 
-	return (0);
+	return (int_count);
 }
