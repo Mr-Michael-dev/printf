@@ -8,12 +8,13 @@
  */
 int _printf(const char *format, ...)
 {
+	int format_count;
 	/*int buffindex = 0;
 	char buffer[BUFF_SIZE);*/
 	va_list args;
 	va_start(args, format);
-	my_parser(format, args);
+	format_count = my_parser(format, args);
 	va_end(args);
 
-	return (0);
+	return (format_count);
 }

@@ -46,22 +46,19 @@ int my_parser(const char *format, va_list args)
 			else if (*p == 's')
 			{
 				str = va_arg(args, char *);
-				handle_str(str);
-				len_count++;
+				len_count += handle_str(str);
 			}
 			else if (*p == 'd')
 			{
 				integer = va_arg(args, int);
 
-				handle_int(integer);
-				len_count++;
+				len_count += handle_int(integer);
 			}
 			else if (*p == 'i')
 			{
 				integer = va_arg(args, int);
 
-				handle_int(integer);
-				len_count++;
+				len_count += handle_int(integer);
 			}
 			else
 			{
