@@ -20,6 +20,10 @@ int handle_unint_octal(unsigned int arg);
 
 int handle_hexadecimal(unsigned int arg);
 
+int handle_hexadecimal_uppercase(unsigned int arg);
+
+int handle_binary(unsigned int arg);
+
 int my_parser(const char *format, va_list args);
 
 #endif
