@@ -11,6 +11,11 @@ int _printf(const char *format, ...)
 	int format_count;
 	va_list args;
 
+	if (format == NULL || format[0] == '\0')
+	{
+		return (-1);
+	}
+
 	va_start(args, format);
 	format_count = my_parser(format, args);
 	va_end(args);
