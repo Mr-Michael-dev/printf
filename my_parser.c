@@ -40,7 +40,7 @@ int my_parser(const char *format, va_list args)
 			else if (*p == 'c')
 			{
 				c = va_arg(args, int);
-				if(c == NULL)
+				if (c == NULL)
 				{
 					return (-1);
 				}

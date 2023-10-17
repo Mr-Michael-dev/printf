@@ -1,36 +1,31 @@
 #include "main.h"
-
 /**
- * handle_unint - prints unsigned integer to stdout
- * @arg: unsigned integer to be printed
+ * handle_binary - prints binary to stdout
+ * @arg: unsigned integer to be converted to binary
  *
- * Return: 0
+ * Return: count
  */
 
-int handle_unint(unsigned int arg)
+int handle_binary(unsigned int arg)
 {
-	char temp[24];
-	int i = 0;
-	int add_count = 0;
+	int count = 0;
+
+	if (arg == NULL)
+	{
+		return (-1);
+	}
 
 	if (arg == 0)
 	{
 		_putchar('0');
-		add_count += 1;
-	} else
-	{
-		while (arg > 0)
-		{
-			temp[i++] = '0' + (arg % 10);
-			arg /= 10;
-		}
-
-		while (i > 0)
-		{
-			_putchar(temp[--i]);
-			add_count += 1;
-		}
+		return (1);
 	}
 
-	return (add_count);
+	while (arg > 0)
+	{
+		_putchar('0' + (arg & 1));
+		count++;
+		arg >>= 1;
+	}
+return (count);
 }
