@@ -1,14 +1,13 @@
 #include "main.h"
 int my_parser(const char *format, va_list args);
 /**
- * my_parser - parse the format string and check for format specifiers
- * and print arguments passed to the function
+ * my_parser - parse the format string and check for format
+ * specifiers and print arguments passed to the function
  * @format: The format string
  * @args: arguments passed from _printf
  *
  * Return: total length printed
  */
-
 int my_parser(const char *format, va_list args)
 {
 	int len_count = 0;
@@ -21,8 +20,6 @@ int my_parser(const char *format, va_list args)
 
 	for (p = format; *p; p++)
 	{
-		/*if (*p == NULL)
-		  return (-1);*/
 		if (*p != '%')
 		{
 			_putchar(*p);
@@ -66,7 +63,7 @@ int my_parser(const char *format, va_list args)
 			{
 				unint_specifier  = va_arg(args, unsigned int);
 
-				len_count += handle_uint(unint_specifier);
+				len_count += handle_unint(unint_specifier);
 			}
 
 			else
