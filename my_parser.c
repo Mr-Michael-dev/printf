@@ -20,6 +20,7 @@ int my_parser(const char *format, va_list args)
 	int decml_specifier;
 	int X_specifier;
 	int binary_specifier;
+	int is_octa;
 
 	for (p = format; *p; p++)
 	{
@@ -78,6 +79,11 @@ int my_parser(const char *format, va_list args)
 			{
 				binary_specifier  = va_arg(args, unsigned int);
 				len_count += handle_binary(binary_specifier);
+			}
+			else if (*p == 'o')
+			{
+				is_octa = va_arg(args, unsigned int);
+				len_count += handle_unint_octal(is_octa);
 			}
 			else
 			{
